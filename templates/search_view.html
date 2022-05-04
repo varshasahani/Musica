@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block content %} 
+{% load static %}
+<div class="row ">
+    {% for song in songs.all %}
+    <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="p-2 ">
+            <img style="height: 200px" alt="" src="{{ song.image.url }}"
+                    class="img-thumbnail rounded-circle "></a>
+        </div>
+        <div class="card-body text-center">
+            <h6 style="color: black; font-weight: bolder;" class="card-title" style="font-weight: bolder;">
+              {{ song.song_title }}</h6>
+            <br>
+  
+        </div>
+        <div class="col-12">
+          <audio preload="none" controls style="width: 100%">
+              <source src="{{ song.song.url }}" type="audio/ogg">
+          </audio>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!--album-->
+
+  <div class="row ">
+    {% for song in Musics %}
+    <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="p-2 ">
+            <img style="height: 200px" alt="" src="{{ song.image.url }}"
+                    class="img-thumbnail rounded-circle "></a>
+        </div>
+        <div class="card-body text-center">
+            <h6 style="color: black; font-weight: bolder;" class="card-title" style="font-weight: bolder;">
+              {{ song.song_title }}</h6>
+            <br>
+  
+        </div>
+        <div class="col-12">
+          <audio preload="none" controls style="width: 100%">
+              <source src="{{ song.song.url }}" type="audio/ogg">
+          </audio>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!--artist-->
+  <div class="row">
+    {% for music in Artist %}
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="p-2 ">
+          <img style="height: 200px" alt="" src="{{ music.image.url }}"
+                  class="img-thumbnail rounded-circle "></a>
+      </div>
+      <div class="card-body text-center">
+          <h6 style="color: black; font-weight: bolder;" class="card-title" style="font-weight: bolder;">
+            {{ music.song_title }}</h6>
+          <br>
+
+      </div>
+      <div class="col-12">
+        <audio preload="none" controls style="width: 100%">
+            <source src="{{ music.song.url }}" type="audio/ogg">
+        </audio>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+{% endblock content %}

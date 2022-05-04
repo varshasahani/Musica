@@ -1,0 +1,48 @@
+{% extends 'base.html' %} 
+{% block content %}
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="icon" href="{% static 'music-player.png' %}">
+    <title>Edit profile</title>
+   
+
+
+</head>
+
+<body>
+<div class="container">
+    <div class="card  m-5" style="max-width: 640px;">
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Edit profile</h5>
+       
+                    <form class="form-group" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <table>
+                            <tr>{{ user_form.as_table }}</tr>
+                            <tr>{{ profile_form.as_table }}</tr>
+                        </table>
+                        <button class="btn btn-outline-danger" type="submit">Save changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>
+
+{% endblock %}
